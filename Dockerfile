@@ -1,2 +1,13 @@
 # Pull base image.
-FROM ubuntu:bionic-20200630
+FROM ubuntu:latest
+
+USER root
+
+FROM baseImage
+RUN Test
+
+FROM debian:jesse2 as build
+RUN stuff
+
+FROM debian:jesse1 as build
+RUN more_stuff
