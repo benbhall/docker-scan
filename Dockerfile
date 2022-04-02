@@ -1,13 +1,3 @@
-# Pull base image.
-FROM ubuntu:latest
-
-USER root
-
-FROM baseImage
-RUN Test
-
-FROM debian:jesse2 as build
-RUN stuff
-
-FROM debian:jesse1 as build
-RUN more_stuff
+FROM node:15.9-alpine3.13
+WORKDIR /workdir
+RUN npm i express-openid-connect@2.7.1
